@@ -1,8 +1,8 @@
-###  DATE: 
+###  DATE: 14/03/2024
 
-###  NAME: 
-###  ROLL NO :
-###  DEPARTMENT: 
+###  NAME: Vinush.cv
+###  ROLL NO : 212222230176
+###  DEPARTMENT: AI DS
 
 
 # EXPERIMENT NO 05 INTERFACING ANALOG OUTPUT SERVO MOTOR WITH ARDUINO
@@ -61,6 +61,15 @@ CIRCUIT DIAGRAM
 
 ### FIGURE 04 CIRCUIT DIAGRAM
 
+![image](https://github.com/vinushcv/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/113975318/b16fc7d6-d871-4cf3-b238-0979f6c5ad93)
+
+
+
+### FIGURE 05 SCHEMATIC DIAGRAM:
+
+![image](https://github.com/vinushcv/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/113975318/0afa5d80-a3ae-4bd9-8445-9f757eb79130)
+
+
 ### PROCEDURE:
 1.	Connect the circuit as per the circuit diagram 
 2.	Connect the board to your computer via the USB cable.
@@ -74,7 +83,37 @@ CIRCUIT DIAGRAM
 
 
 ### PROGRAM :
- 
+ ```c++
+#include <Servo.h>
+int pos=0;
+Servo s1;
+void setup()
+{
+  s1.attach(9);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  for(pos=0;pos<=180;pos++)
+  {
+    s1.write(pos);
+    delay(30);
+    //Serial.print("Angle=");
+    Serial.println(pos);
+   
+  }
+  for(pos=180;pos>=0;pos--)
+  {
+    s1.write(pos);
+    delay(30);
+    //Serial.print("Angle=");
+    Serial.println(pos);
+  
+  }
+  
+}
+
 
 
 
